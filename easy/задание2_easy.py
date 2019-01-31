@@ -1,13 +1,9 @@
-first_list = [2, 2, 4, 2, 6, 1, 1, 9, 10, 20]
-second_list = [2, 5, 3, 0, 1, 20, 10, 8, ]
-while True:
-    result = list(set(first_list) & set(second_list))
-    if result != []:
-        i = 0
-        while i < len(result):
-            first_list.pop(first_list.index(result[i]))
-            i += 1
-    else:
-        break
+def max_numbers(number_1, number_2, number_3):
+    max_number = max(number_1, number_2, number_3)
+    return max_number
 
-print(first_list, second_list)
+
+userAnswer = input('Введите три произвольных числа, через пробел: ')
+number_1, number_2, number_3 = userAnswer.split()
+
+print(max_numbers(number_1, number_2, number_3))

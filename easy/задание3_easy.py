@@ -1,8 +1,14 @@
-numbers = [2, 5, 3, 0, 1, 20, 10, 8, ]
-answer = []
-for number in numbers:
-    if number % 2 == 0:
-        answer.append(number / 4)
+def max_string(string):
+    max_len = max(string, key=len )
+    return max_len
+
+
+string = []
+while True:
+    userAnswer =(input('Введите любой длины строчку, а для завершения нажмите q: '))
+    if userAnswer == 'q':
+        break
     else:
-        answer.append(number * 2)
-print(answer)
+        string.append(userAnswer)
+print(max_string(string))
+
