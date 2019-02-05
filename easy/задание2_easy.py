@@ -1,9 +1,6 @@
-def max_numbers(number_1, number_2, number_3):
-    max_number = max(number_1, number_2, number_3)
-    return max_number
+fruits_1 = ['яблоки', 'мандарин', 'груша', 'банан']
+fruits_2 = ['яблоки', 'груша', 'апельсин', 'банан']
+rezult = []
 
-
-userAnswer = input('Введите три произвольных числа, через пробел: ')
-number_1, number_2, number_3 = userAnswer.split()
-
-print(max_numbers(number_1, number_2, number_3))
+[rezult.append(i) for i in (set(fruits_1) & set(fruits_2))]
+print(rezult)

@@ -1,10 +1,4 @@
-def user(name, age, city):
-    sentence = '{}, {} год(а), проживает в городе {}.'.format(name, age, city)
-    return sentence
-
-
-name = input('Как вас зовут? ')
-age = input('Сколько вам лет? ')
-city = input('Где вы живете? ')
-
-print(user(name, age, city))
+list_1 = [2, 3, 4, 5]
+list_2 = []
+list_2 = [i**2 for i in list_1]
+print(list_2)

@@ -1,31 +1,22 @@
-import os
+import re
 
-path = os.path.join('salary.txt')
-names, salary = ['саша', 'миша', 'максим', 'дима'], [5000000, 123000, 20000, 6000]
-file_list = []
-i = 0
+name = input('Введите свое имя: ')
+surname = input('Введите свою Фамилия: ')
+email = input('Введите свой Email: ')
 
-for name in names:
-    names[i] = name.upper()
-    i += 1
+regex_name = '^[A-ZЁ-Я][a-zа-ё]+$'
+regex_email = '^[a-z_0-9]+@[a-z0-9]+\.(com|ru|org)'
 
-dictionary = dict(zip(names, salary))
-print(dictionary)
+error_code = 0
 
-with open(path, 'w+', encoding='UTF-8') as file:
-    # запись в файл
-    for key, value in dictionary.items():
-        file.write('{} - {} \n'.format(key, value))
-
-    # чтение из файла
-    file.seek(0)
-    for line in file:
-        file_list.append(line)
-
-i = 0
-for worker in file_list:
-    worker = worker.split()
-    if int(worker[2]) <= 500000:
-        print('{} - {} руб.'.format(worker[0], int(int(worker[2]) * 0.87)))
-    else:
-        print('{} руб.'.format(int(int(worker[2]) * 0.87)))
+if not re.match(regex_name, name):
+    error_code = 1
+    print('Неверно указано имя.')
+if not re.match(regex_name, surname):
+    error_code = 1
+    print('Неверно указана фамилия.')
+if not re.match(regex_email, email):
+    error_code = 1
+    print('Неверно указан email.')
+if not error_code:
+    print('Данные введены верно.')
